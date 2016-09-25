@@ -3,8 +3,12 @@
 Application to send email with data from other applications (folders). You can set everything in settings and run it with schedule in cron.
 
 ### Dependencies
-* Bash
+* Bash (on Linux)
 * Python
+
+### Tested on
+* Python 3.5.2 @ Windows 10
+* Python 2.7.9 @ Debian Jessie
 
 ### Configuration
 Copy file `config/settings.ini.py` to `config/settings.py` and edit to fit your settings:
@@ -43,6 +47,8 @@ Copy file `config/folders.ini.json` to `config/folders.json` and edit to fir you
 ````
 
 * `folder` points to **full** folder path and will be packed recursively with subfolders,
+    * eg Linux path: `/home/user/application/logs`,
+    * eg Windows path: `C:\\Users\\user\\application\\logs`,
 * `archive` is a prefix name of ZIP archive, whole filename is `prefix_date_time.zip`.
 
 ### Execute rights
@@ -55,7 +61,7 @@ sudo chmod +x ./apps/*.py
 ````
 
 ### Schedule
-Edit using `crontab -e` and add at the end of file:
+On Linux powered machine add scheduler using `crontab -e` by adding at the end of file:
 
 ````bash
 0 1 * * 0 /home/user/Backup/cron.sh
@@ -63,9 +69,10 @@ Edit using `crontab -e` and add at the end of file:
 
 which means to do backup every sunday at 1.00 AM.
 
+By the way you can still just use `./apps/Main.py` to execute Backup2Mail.
+
 ### TODO
-* [ ] BAT script to execute on Windows
-* [ ] more tests on all platforms and Python versions
+* [ ] BAT script to execute on Windows (same as cron.sh)
 
 ### Author
 [Paweł Cierzniakowski](mailto:pawel@cierzniakowski.pl)
