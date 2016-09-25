@@ -1,0 +1,10 @@
+{
+  "1": {
+    "folder": "/var/log",
+    "archive": "system_logs"
+  },
+  "2": {
+    "folder": "/boot",
+    "archive": "boot"
+  }
+}

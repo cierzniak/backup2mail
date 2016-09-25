@@ -1,0 +1,14 @@
+### Own
+config/settings.py
+config/folders.json
+
+data/*
+!data/.gitkeep
+
+logs/*
+!logs/.gitkeep
+
+### Python
+__pycache__/
+*.py[cod]
+*$py.class
