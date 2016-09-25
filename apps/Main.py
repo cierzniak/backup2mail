@@ -5,9 +5,9 @@ import smtplib
 import sys
 from email import encoders
 
-from email.MIMEBase import MIMEBase
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEText import MIMEText
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../functions'))
 import other
