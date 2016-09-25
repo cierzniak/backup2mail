@@ -3,6 +3,7 @@
 Application to send email with data from other applications (folders). You can set everything in settings and run it with schedule in cron.
 
 ### Dependencies
+* Bash
 * Python
 
 ### Configuration
@@ -44,19 +45,27 @@ Copy file `config/folders.ini.json` to `config/folders.json` and edit to fir you
 * `folder` points to **full** folder path and will be packed recursively with subfolders,
 * `archive` is a prefix name of ZIP archive, whole filename is `prefix_date_time.zip`.
 
-### Chmod
-Allow to execute files:
+### Execute rights
+Allow to execute applicatyion by adding execute right in following steps:
 
 ````bash
-cd /root/Backup
+cd /home/user/Backup
 sudo chmod +x ./*.sh
 sudo chmod +x ./apps/*.py
 ````
 
-### Crontabź
+### Schedule
+Edit using `crontab -e` and add at the end of file:
 
 ````bash
-0 1 * * 0 /root/Backup/cron.sh
+0 1 * * 0 /home/user/Backup/cron.sh
 ````
 
-which means to do backup every sunday at 1.00 AM
+which means to do backup every sunday at 1.00 AM.
+
+### TODO
+* [ ] BAT script to execute on Windows
+* [ ] more tests on all platforms and Python versions
+
+### Author
+[Paweł Cierzniakowski](mailto:pawel@cierzniakowski.pl)
