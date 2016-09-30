@@ -41,7 +41,6 @@ msg = MIMEMultipart()
 msg['Subject'] = '[' + settings.SUBJECT_TOPIC + '] Backup'
 msg['From'] = settings.SMTP_USER
 msg['To'] = settings.EMAIL_TO
-msg.attach(MIMEText(text, 'plain'))
 logger.info('Add attachments')
 for file_ in other.listdir(data_folder):
     with open(data_folder + file_, "rb") as file__:
@@ -50,6 +49,7 @@ for file_ in other.listdir(data_folder):
         encoders.encode_base64(part)
         part.add_header('Content-Disposition', "attachment; filename=" + file_)
         msg.attach(part)
+msg.attach(MIMEText(text, 'plain'))
 logger.info('Send email')
 smtpserver.sendmail(settings.SMTP_USER, [settings.EMAIL_TO], msg.as_string())
 smtpserver.quit()
@@ -59,3 +59,4 @@ for file in other.listdir(data_folder):
     logger.info('Remove archive ' + file)
     os.remove(data_folder + file)
 # </editor-fold>
+logger.debug('Done')

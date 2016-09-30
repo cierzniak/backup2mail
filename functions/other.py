@@ -2,13 +2,10 @@
 import json
 import logging
 import os
-import sys
 from contextlib import closing
 from datetime import datetime
 from zipfile import ZIP_DEFLATED
 from zipfile import ZipFile
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '../config'))
 
 
 # </editor-fold>
