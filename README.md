@@ -51,15 +51,6 @@ Copy file `config/folders.ini.json` to `config/folders.json` and edit to fir you
     * eg Windows path: `C:\\Users\\user\\application\\logs`,
 * `archive` is a prefix name of ZIP archive, whole filename is `prefix_date_time.zip`.
 
-### Execute rights
-Allow to execute applicatyion by adding execute right in following steps:
-
-````bash
-cd /home/user/Backup
-sudo chmod +x ./*.sh
-sudo chmod +x ./apps/*.py
-````
-
 ### Schedule
 On Linux powered machine add scheduler using `crontab -e` by adding at the end of file:
 
